@@ -246,7 +246,7 @@ namespace Improbable.Gdk.Core
 
         private void AddCoreSystems()
         {
-            var connectionHandler = new SpatialOSConnectionHandler(Connection);
+            var connectionHandler = new MultiThreadedSpatialOSConnectionHandler(Connection);
             World.CreateManager<WorkerSystem>(connectionHandler, Connection, LogDispatcher, WorkerType, Origin);
             World.GetOrCreateManager<CommandSystem>();
             World.GetOrCreateManager<ComponentUpdateSystem>();
@@ -265,7 +265,7 @@ namespace Improbable.Gdk.Core
             World.GetOrCreateManager<SubscriptionSystem>();
 
             // Reactive components
-            ReactiveComponentsHelper.AddCommonSystems(World);
+            // ReactiveComponentsHelper.AddCommonSystems(World);
         }
 
         public void Dispose()

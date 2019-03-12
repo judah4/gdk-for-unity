@@ -491,16 +491,7 @@ namespace <#= qualifiedNamespace #>
 
         public void SendUpdate(<#= componentDetails.ComponentName #>.Update update)
         {
-            var component = EntityManager.GetComponentData<<#= componentDetails.ComponentName #>.Component>(Entity);
-<# foreach(var fieldDetails in fieldDetailsList) { #>
-
-            if (update.<#= fieldDetails.PascalCaseName #>.HasValue)
-            {
-                component.<#= fieldDetails.PascalCaseName #> = update.<#= fieldDetails.PascalCaseName #>.Value;
-            }
-<# } #>
-
-            EntityManager.SetComponentData(Entity, component);
+            ComponentUpdateSystem.SendUpdate(update, EntityId);
         }
 
 <# foreach (var eventDetails in eventDetailsList) {

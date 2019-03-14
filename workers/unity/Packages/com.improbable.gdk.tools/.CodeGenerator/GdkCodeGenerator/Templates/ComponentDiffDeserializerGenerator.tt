@@ -75,6 +75,7 @@ namespace <#= qualifiedNamespace #>
                     var schemaUpdate = new SchemaComponentUpdate(ComponentId);
                     var componentUpdate = new ComponentUpdate(schemaUpdate);
                     Serialization.SerializeUpdate(update.Update, schemaUpdate);
+                    schemaUpdate.GetEvents();
                     serializedMessages.AddComponentUpdate(componentUpdate, update.EntityId.Id);
                 }
 
@@ -92,9 +93,9 @@ namespace <#= qualifiedNamespace #>
                         var schemaUpdate = new SchemaComponentUpdate(ComponentId);
                         var componentUpdate = new ComponentUpdate(schemaUpdate);
                         var obj = schemaUpdate.GetEvents().AddObject(<#= ev.EventIndex #>);
+                        schemaUpdate.GetFields();
                         <#= ev.FqnPayloadType #>.Serialization.Serialize(ev.Event.Payload, obj);
                         serializedMessages.AddComponentUpdate(componentUpdate, ev.EntityId.Id);
-
                     }
                 }
 <# } #>

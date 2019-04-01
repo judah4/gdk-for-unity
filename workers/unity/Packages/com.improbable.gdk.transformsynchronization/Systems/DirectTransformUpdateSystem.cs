@@ -1,5 +1,4 @@
 using Improbable.Gdk.Core;
-using Improbable.Transform;
 using Unity.Entities;
 
 #region Diagnostic control

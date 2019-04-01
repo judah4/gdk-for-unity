@@ -1,6 +1,6 @@
 using Improbable.Gdk.Core;
 using Improbable.Gdk.ReactiveComponents;
-using Improbable.Transform;
+using Improbable.Gdk.TransformSynchronization;
 using Unity.Collections;
 using Unity.Entities;
 using UnityEngine;

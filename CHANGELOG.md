@@ -10,6 +10,7 @@
 
 - Added a static helper in the `EntityTemplate` class to construct worker access attributes.
 - Added an optional callback as an argument to the `RequestPlayerCreation` method in `SendCreatePlayerRequestSystem`. This callback is invoked upon receiving a response to a player creation request.
+- Added a `WithTimeout(TimeSpan timeout)` method to the `RedirectedProcess` class. This allows you to set a timeout for the underlying process execution.
 
 ### Changed
 

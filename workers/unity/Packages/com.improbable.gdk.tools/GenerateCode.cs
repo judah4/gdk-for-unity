@@ -13,6 +13,7 @@ namespace Improbable.Gdk.Tools
     {
         private const string CsProjectFile = ".CodeGenerator/GdkCodeGenerator/GdkCodeGenerator.csproj";
         private const string ImprobableJsonDir = "build/ImprobableJson";
+        private const string ImprobableDescriptorDir = "../../build/assembly/schema";
 
         private static string SchemaCompilerPath => Path.Combine(
             Common.GetPackagePath("com.improbable.worker.sdk"),
@@ -192,6 +193,9 @@ namespace Improbable.Gdk.Tools
             {
                 baseArgs.Add($"--schema-path=\"{directory}\"");
             }
+
+            // Schema Descriptor
+            baseArgs.Add($"--descriptor-dir=\"{ImprobableDescriptorDir}\"");
 
             return baseArgs.ToArray();
         }

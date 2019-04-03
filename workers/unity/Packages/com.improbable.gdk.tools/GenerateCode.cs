@@ -186,7 +186,10 @@ namespace Improbable.Gdk.Tools
             // Add user defined schema directories
             foreach (var schemaSourceDir in toolsConfig.SchemaSourceDirs)
             {
-                baseArgs.Add($"--schema-path=\"{schemaSourceDir}\"");
+                if (Directory.Exists(schemaSourceDir))
+                {
+                    baseArgs.Add($"--schema-path=\"{schemaSourceDir}\"");
+                }
             }
 
             // Add package schema directories

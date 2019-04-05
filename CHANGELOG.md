@@ -14,6 +14,8 @@
     - `InterestTemplate` provides functionality to ergonomically add, replace and clear queries from an Interest component.
     - `InterestQuery` reduces boilerplate code required to construct interest queries.
     - `Constraint` contains static methods to easily create constraints for an interest query.
+- Added Scripting Define Symbol `DISABLE_REACTIVE_COMPONENTS`. Using this symbol will disable all reactive componts and systems.
+    - Currently not compatible with the FPS Starter Project.
 
 ### Changed
 

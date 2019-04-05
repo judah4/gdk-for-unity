@@ -14,6 +14,10 @@
     - `InterestTemplate` provides functionality to ergonomically add, replace and clear queries from an Interest component.
     - `InterestQuery` reduces boilerplate code required to construct interest queries.
     - `Constraint` contains static methods to easily create constraints for an interest query.
+- Added a `WorkerFlagReader` which you can subscribe and `Require`. This allows you to:
+    - Add callbacks for changes to worker flags.
+    - Read the value of worker flags.
+- Expose `GetWorkerFlag(string name)` on the `IConnectionHandler`.
 
 ### Changed
 
@@ -29,6 +33,7 @@
 - Tools package now uses PackageManager API instead of parsing manifest.json.
 - Updated default snapshot to have more than one PlayerCreator entity.
 - Fixed package dependencies.
+- Worker flag changes are propagated to the `ViewDiff`.
 
 ## `0.2.0` - 2019-03-18
 
